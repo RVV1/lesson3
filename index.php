@@ -15,8 +15,13 @@ $newArray = array();
 foreach($array as $continent => $animal){
 	if(strpos($animal, ' ')){
 		//echo $animal . PHP_EOL . '<br>';
-		$newArray[] = $animal . PHP_EOL . '<br>';		
+		$newArray[] = $animal . PHP_EOL . '<br>';
+		shuffle($newArray);
 	}
 };
+
+
 print_r ($newArray) . PHP_EOL . '<br>';
+
+
 ?>
