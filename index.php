@@ -1,27 +1,28 @@
 <?php
-$array = [
-    'Africa' => 'Dwarf chimpanzee',
-    'Australia' => 'Asian buffalo',
-    'Asia' => 'fox',
-    'East America' => 'marsupial mice',
-    'West America' => 'Gray Parrot',
-    'Antarctica' => 'peacock',
-    'West Asia' => 'Gazelle Dorcas',
-    'East Asia' =>'flying foxes'
+$arrayBox = [
+    'Africa' => [
+		'Dwarf chimpanzee',
+    	'Asian buffalo',
+    	'fox',
+    	'marsupial mice',
+    	'Gray Parrot'
+	],
+    'Australia' => [
+		'peacock',
+    	'Gazelle Dorcas',
+    	'flying foxes'
+	]
 ];
-
 $newArray = array();
-
-foreach($array as $continent => $animal){
-	if(strpos($animal, ' ')){
-		//echo $animal . PHP_EOL . '<br>';
-		$newArray[] = $animal . PHP_EOL . '<br>';
-		shuffle($newArray);
+foreach($arrayBox as $continent => $animal){
+	foreach($animal as $v){
+		if(strpos($v, ' ')){
+			$newArray[] = $v;
+		}
 	}
 };
 
-
+echo '<pre>';
 print_r ($newArray) . PHP_EOL . '<br>';
-
 
 ?>
