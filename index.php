@@ -8,7 +8,7 @@ $arrayBox = [
     	'Gray Parrot'
 	],
     'Australia' => [
-		'peacock',
+	'peacock',
     	'Gazelle Dorcas',
     	'flying foxes'
 	]
