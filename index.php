@@ -1,35 +1,41 @@
 <?php
+//1 содать многомерный массив
 $arrayBox = [
     'Africa' => [
-	'Dwarf chimpanzee',
+		'Dwarf chimpanzee',
     	'Asian buffalo',
     	'fox',
     	'marsupial mice',
     	'Gray Parrot'
 	],
     'Australia' => [
-	'peacock',
+		'peacock',
     	'Gazelle Dorcas',
     	'flying foxes'
 	]
 ];
-
+//2 перебрать массив и создать новый
 $newArray = array();
-$secondArray = array();
+
 foreach($arrayBox as $continent => $animal){
-	foreach($animal as $v){
+	foreach($animal as $v){		
 		if(strpos($v, ' ')){
-			$newArray[] = $v;
-			if(substr($v, 0, 6)){
-				$secondArray[] = $v;
-			}
+			$newArray[] = $v;			
 		}
 	}
 };
 
+//3 создать строку и вытащить из нее отрезки слов и перемещать их между собой
+$Animal = 'Dwarf chimpanzee Asian buffalo fox marsupial mice Gray Parrot peacock Gazelle Dorcas flying foxes';
 
+$Animal = explode(' ', $Animal);
+
+
+foreach($Animal as $k => $v){
+	shuffle($Animal);
+}
 echo '<pre>';
 print_r ($newArray) . PHP_EOL . '<br>';
-print_r ($secondArray) . PHP_EOL . '<br>';
-
+print_r ($Animal) . PHP_EOL . '<br>';
+//print_r ($shuffleAnimal) . PHP_EOL . '<br>';
 ?>
