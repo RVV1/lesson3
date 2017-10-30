@@ -25,17 +25,26 @@ foreach($arrayBox as $continent => $animal){
 	}
 };
 
-//3 создать строку и вытащить из нее отрезки слов и перемещать их между собой
-$Animal = 'Dwarf chimpanzee Asian buffalo fox marsupial mice Gray Parrot peacock Gazelle Dorcas flying foxes';
+$animal1 = [];
+$animal2 = [];
+$allAnimal = [];
 
-$Animal = explode(' ', $Animal);
-shuffle($Animal);
+foreach($newArray as $animal){
+	list($africa, $australia) = explode(' ', $animal, 2);
+	$animal1[] = $africa;
+	$animal2[] = $australia;
+}
 
-foreach($Animal as $k => $v){
-	echo $k . ' ' . $v . ' ' . $v . '<br>';
+shuffle($animal1);
+shuffle($animal2);
+
+foreach(array_keys($animal1) as $i){
+	$allAnimal[] = $animal1[$i] . ' ' . $animal2[$i];
 }
 echo '<pre>';
 print_r ($newArray) . PHP_EOL . '<br>';
+
+print_r ($allAnimal);
 //print_r ($Animal) . PHP_EOL . '<br>';
 //print_r ($shuffleAnimal) . PHP_EOL . '<br>';
 
