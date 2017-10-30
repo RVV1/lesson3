@@ -29,13 +29,14 @@ foreach($arrayBox as $continent => $animal){
 $Animal = 'Dwarf chimpanzee Asian buffalo fox marsupial mice Gray Parrot peacock Gazelle Dorcas flying foxes';
 
 $Animal = explode(' ', $Animal);
-
+shuffle($Animal);
 
 foreach($Animal as $k => $v){
-	shuffle($Animal);
+	echo $k . ' ' . $v . ' ' . $v . '<br>';
 }
 echo '<pre>';
 print_r ($newArray) . PHP_EOL . '<br>';
-print_r ($Animal) . PHP_EOL . '<br>';
+//print_r ($Animal) . PHP_EOL . '<br>';
 //print_r ($shuffleAnimal) . PHP_EOL . '<br>';
+
 ?>
